@@ -97,7 +97,7 @@ def run_experiment(graph_name, graph, population_rate, generations, crossover_ra
                                      elitism_rate=elitism_rate)
 
     start_time = time.time()
-    best_fitness, best_labeling, geracao = ga_l321.run()
+    best_fitness, best_labeling = ga_l321.run()
     end_time = time.time()
     execution_time = end_time - start_time
 
@@ -116,7 +116,7 @@ def run_experiment(graph_name, graph, population_rate, generations, crossover_ra
 
     #print(f"best labeling = {best_labeling}")
 
-    print(f"{trial},{graph_name},{len(graph)},{len(graph.edges())},{nx.density(graph):.5f},{best_fitness},{execution_time:.5f},{Delta},{delta},{lower_bound},{upper_bound}, {geracao}")
+    print(f"{trial},{graph_name},{len(graph)},{len(graph.edges())},{nx.density(graph):.5f},{best_fitness},{execution_time:.5f},{Delta},{delta},{lower_bound},{upper_bound}")
 
 
 def main():
@@ -137,7 +137,7 @@ def main():
     trials = 30
     out_filename = "result_" + nome_sem_extensao + ".csv"
 
-    print("trial,filename,order,size,density,fitness,time(seconds),Max_degree,Min_Degree,LB,UB,is_valid?")
+    print("trial,filename,order,size,density,fitness,time(seconds),Max_degree,Min_Degree,LB,UB")
 
     for t in range(1, trials+1):
         run_experiment(nome_sem_extensao, graph, population_rate, generations, crossover_rate, mutation_rate, elitism_rate, out_filename, t)
