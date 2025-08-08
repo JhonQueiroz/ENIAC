@@ -23,7 +23,7 @@ class Genetic_Algorithm_L321:
     self.dict1 = self._neighbors_at_distance_1() # Dicionário dos vizinhos distância 1
     self.dict2 = self._neighbors_at_distance_2() # Dicionário dos vizinhos distância 2
     self.dict3 = self._neighbors_at_distance_3() # Dicionário dos vizinhos distância 3
-    self.solution_history = []
+    # self.solution_history = []
 
 
   # Função run.
@@ -41,7 +41,7 @@ class Genetic_Algorithm_L321:
     
     self.best_fitness = min(self.fitness_scores)
     best_fitness_previous = self.best_fitness
-    self.solution_history.append((0, self.best_fitness))  # Registro da 1ª geração
+    # self.solution_history.append((0, self.best_fitness))  # Registro da 1ª geração
     
     while count < self.generations:
       self.update_population()
@@ -56,9 +56,9 @@ class Genetic_Algorithm_L321:
       else:
         count_repeat = 0 
         best_fitness_previous = self.best_fitness 
-        self.solution_history.append((count + 1, self.best_fitness))  # Registro da melhoria
+        # self.solution_history.append((count + 1, self.best_fitness))  # Registro da melhoria
 
-        print(f"Geração {count + 1}: Novo melhor fitness = {self.best_fitness}")
+        # print(f"Geração {count + 1}: Novo melhor fitness = {self.best_fitness}")
 
       if count_repeat >= max_count_repeat:
 

@@ -130,7 +130,7 @@ def main():
     nome_sem_extensao = os.path.splitext(input_filename)[0] 
 
     population_rate = 0.25 # equivalente a (1/4)
-    generations = 150
+    generations = 300
     crossover_rate = 0.8
     mutation_rate = 0.2
     elitism_rate = 0.1
